@@ -1,0 +1,75 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\createsection{\Grader}{Grader di prova}
+
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+
+\newenvironment{warning}
+  {\par\begin{mdframed}[linewidth=2pt,linecolor=gray]%
+    \begin{list}{}{\leftmargin=1cm
+                   \labelwidth=\leftmargin}\item[\Large\ding{43}]}
+  {\end{list}\end{mdframed}\par}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Calcola l'altezza dell'albero binario in input.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\InputFile
+Su standard input (\texttt{scanf}) sono presenti $N+1$ righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: l'intero $N$, la dimensione dell'albero, e l'intero $r$,
+l'\textit{id} della radice dell'albero.
+\item Riga $2\dots N+1$: ciascuna riga contiene $3$ numeri, $id_i$, $l_i$, $r_i$,
+che indicano che il nodo con id $id_i$ ha per figli, rispettivamente,
+sinistro e destro i nodi con id $l_i$ e $r_i$. Se $l_i = -1$ significa
+che il nodo $i$ non ha figli sinistri, analogamente per $r_i$.
+\end{itemize}
+
+\OutputFile
+Su standard output (\texttt{printf}) deve essere scritta esattamente una riga,
+contenente un singolo numero, ovvero l'altezza dell'albero in input.
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \leq N \leq 1\,000\,000$.
+    \item $0 \leq r \leq N-1$.
+    \item $0 \leq id_i \leq N-1$ per ogni $i$.
+    \item $0 \leq l_i \leq N-1$ per ogni $i$.
+    \item $0 \leq r_i \leq N-1$ per ogni $i$.
+    \item L'input rappresenta correttamente un albero.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Examples
+
+\begin{example}
+\exmpfile{height.input0.txt}{height.output0.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+%\Explanation

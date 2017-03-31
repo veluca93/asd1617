@@ -1,0 +1,8 @@
+name: asd1617
+description: Esercitazioni Algoritmi e Strutture Dati 2016-2017
+
+tasks:
+    - sum
+    - maxsum
+    - sort
+    - height
