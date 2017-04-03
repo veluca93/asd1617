@@ -6,3 +6,4 @@ tasks:
     - maxsum
     - sort
     - height
+    - bst

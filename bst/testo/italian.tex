@@ -1,0 +1,111 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\createsection{\Grader}{Grader di prova}
+
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+
+\newenvironment{warning}
+  {\par\begin{mdframed}[linewidth=2pt,linecolor=gray]%
+    \begin{list}{}{\leftmargin=1cm
+                   \labelwidth=\leftmargin}\item[\Large\ding{43}]}
+  {\end{list}\end{mdframed}\par}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Costruire un albero binario di ricerca le cui chiavi sono gli elementi
+dell'array (già ordinato) in input e effettuare le operazioni (ricerca,
+inserimento, cancellazione, numero di elementi in un range) specificate.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\InputFile
+Su standard input (\texttt{scanf}) sono presenti $N+O+1$ righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: gli interi $N$ e $O$, la dimensione dell'array e il numero di
+    operazioni.
+\item Righe $2...N+1$: gli $N$ elementi $a_i$ dell'array.
+\item Righe $N+2...O+N+1$: Una delle seguenti possibilità:
+    \begin{itemize}
+        \item il carattere \texttt{f}, seguito da uno spazio e da
+        un numero $o_i$, a indicare la richiesta di ricercare il numero $o_i$
+        nell'albero
+        \item il carattere \texttt{i}, seguito da uno spazio e da
+        un numero $o_i$, a indicare la richiesta di inserire il numero $o_i$
+        nell'albero
+        \item il carattere \texttt{d}, seguito da uno spazio e da
+        un numero $o_i$, a indicare la richiesta di eliminare il numero $o_i$
+        dall'albero
+        \item il carattere \texttt{r}, seguito da uno spazio e da
+        due numeri $s_i$, $e_i$ a indicare la richiesta di contare il numero
+        di elementi nell'albero che appartengono al range $[s_i, e_i)$.
+    \end{itemize}
+\end{itemize}
+
+\OutputFile
+Su standard output (\texttt{printf}) per ogni richiesta di ricerca di un
+numero deve essere stampato su una riga $1$ se il numero è stato trovato, $0$
+altrimenti. Per ogni richiesta di ricerca di un range deve essere stampato il
+numero di elementi facenti parte di quel range.
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $0 \leq N \leq 100\,000$.
+    \item $1 \leq O \leq 400\,000$.
+    \item $a_i < a_{i+1}$ per ogni $i$.
+    \item I primi cinque casi di test sono quelli riportati sotto.
+    \item I cinque casi di test successivi presentano solo operazioni di
+        ricerca.
+    \item I cinque casi di test successivi presentano solo operazioni di
+        ricerca e di inserimento.
+    \item I cinque casi di test successivi non presentano operazioni di
+        ricerca di un range.
+    \item I cinque casi di test successivi non presentano operazioni di
+        cancellazione.
+    \item Gli ultimi dieci casi di test presentano tutte le operazioni
+        possibili.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Examples
+
+\begin{example}
+\exmpfile{bst.input0.txt}{bst.output0.txt}%
+\end{example}
+\begin{example}
+\exmpfile{bst.input1.txt}{bst.output1.txt}%
+\end{example}
+\begin{example}
+\exmpfile{bst.input2.txt}{bst.output2.txt}%
+\end{example}
+\begin{example}
+\exmpfile{bst.input3.txt}{bst.output3.txt}%
+\end{example}
+\begin{example}
+\exmpfile{bst.input4.txt}{bst.output4.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+%\Explanation
