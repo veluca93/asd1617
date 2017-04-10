@@ -7,3 +7,4 @@ tasks:
     - sort
     - height
     - bst
+    - hash
