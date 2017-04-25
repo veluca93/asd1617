@@ -8,3 +8,4 @@ tasks:
     - height
     - bst
     - hash
+    - graph
