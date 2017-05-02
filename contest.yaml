@@ -9,3 +9,4 @@ tasks:
     - bst
     - hash
     - graph
+    - diameter

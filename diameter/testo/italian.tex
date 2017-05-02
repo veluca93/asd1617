@@ -1,0 +1,76 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\createsection{\Grader}{Grader di prova}
+
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+
+\newenvironment{warning}
+  {\par\begin{mdframed}[linewidth=2pt,linecolor=gray]%
+    \begin{list}{}{\leftmargin=1cm
+                   \labelwidth=\leftmargin}\item[\Large\ding{43}]}
+  {\end{list}\end{mdframed}\par}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+  Dato un grafo connesso in input, calcolarne il diametro.
+
+\begin{warning}
+    Il \textit{diametro} di un grafo è definito come la massima lunghezza di un
+    cammino minimo tra una qualsiasi coppia di nodi.
+\end{warning}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\InputFile
+Su standard input (\texttt{scanf}) sono presenti $M+1$ righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: gli interi $N$ e $M$, il numero di nodi e di archi, rispettivamente.
+\item Riga $2\dots M+1$: ciascuna riga contiene $2$ numeri, $a_i$ e $b_i$,
+che indicano che esiste un arco che connette tra loro i nodi $a_i$ e $b_i$.
+\end{itemize}
+\begin{warning} 
+    I nodi sono numerati da $0$ a $N-1$.
+\end{warning}
+
+\OutputFile
+Su standard output (\texttt{printf}) deve essere scritta esattamente $1$ riga,
+contenente un singolo numero, ovvero il diametro del grafo.
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \leq N \leq 1\,000$.
+    \item $1 \leq M \leq 10\,000$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Examples
+
+\begin{example}
+    \exmpfile{diameter.input0.txt}{diameter.output0.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+%\Explanation
