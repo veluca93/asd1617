@@ -1,0 +1,8 @@
+infile: ''
+memory_limit: 512
+name: dijkstra
+outfile: ''
+public_testcases: all
+time_limit: 1
+title: Cammino minimo
+token_mode: disabled

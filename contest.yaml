@@ -10,3 +10,4 @@ tasks:
     - hash
     - graph
     - diameter
+    - dijkstra

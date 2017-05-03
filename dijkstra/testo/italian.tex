@@ -1,0 +1,89 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+
+\createsection{\Grader}{Grader di prova}
+
+\newcommand{\inputfile}{\texttt{stdin}}
+\newcommand{\outputfile}{\texttt{stdout}}
+
+\newenvironment{warning}
+  {\par\begin{mdframed}[linewidth=2pt,linecolor=gray]%
+    \begin{list}{}{\leftmargin=1cm
+                   \labelwidth=\leftmargin}\item[\Large\ding{43}]}
+  {\end{list}\end{mdframed}\par}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Trovare la distanza fra il vertice $0$ e il vertice $N-1$ in un grafo orientato pesato.
+
+%       Risolvete Dijkstra su un grafo diretto.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{itemize}[nolistsep]
+  \item L'intero $N$ rappresenta il numero di vertici.
+  \item L'intero $M$ rappresenta il numero di archi.
+  \item Gli array \texttt{X}, \texttt{Y} e \texttt{P} sono indicizzati da $0$ a $M-1$ e indicano che esiste un arco dal vertice \texttt{X[$i$]} al vertice \texttt{Y[$i$]} di peso \texttt{P[$i$]}.
+  \item La funzione deve restituire la minima distanza fra il verice $0$ e il vertice $N-1$; se non è possibile raggiungere il vertice $N-1$, deve restituire il valore $-1$.
+\end{itemize}
+
+\medskip
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Grader
+Su input ci sono $M+1$ righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: i due interi $N$ e $M$, il numero di vertici e di archi.
+\item Riga $2\dots M+1$: ciascuna riga contiene $3$ numeri, $a_i$, $b_i$ e $p_i$, che indicano che esiste un arco di peso $p_i$ che connette $a_i$ a $b_i$.
+
+\end{itemize}
+
+Il file di output è composto da un'unica riga, contenente la distanza minima. Se non esiste alcun cammino che collega $0$ a $N-1$, stampare $-1$.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+	\item $1 \le N \le 200\,000$.
+    \item $1 \le M \le 200\,000$.
+	\item $p_i \le 1\,000$ per ogni $i=0,\ldots, M-1$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Examples
+
+\begin{example}
+\exmpfile{mincammino.input0.txt}{mincammino.output0.txt}%
+\exmpfile{mincammino.input1.txt}{mincammino.output1.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+% \Explanation
+% 
+% Il \textbf{primo caso di esempio} è quello descritto nel testo.\\[2mm]
+% Nel \textbf{secondo caso di esempio} conviene fermarsi nelle spiagge 2, 3, 4, 6 e 7 (ma è possibile fermarsi anche nella spiaggia 1 ottenendo il medesimo risultato).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

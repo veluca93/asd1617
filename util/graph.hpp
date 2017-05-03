@@ -772,7 +772,7 @@ namespace Graph {
          *  @param e the edge
          */
         friend ostream& operator<<(ostream& os, const Edge<_enc, _dec>& e) {
-            pair<int, int> p = e.x;
+            pair<int, int> p = _dec(e);
             return os << p.first << " " << p.second;
         }
 
