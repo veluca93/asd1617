@@ -1,0 +1,72 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\createsection{\Grader}{Grader di prova}
+
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+
+\newenvironment{warning}
+  {\par\begin{mdframed}[linewidth=2pt,linecolor=gray]%
+    \begin{list}{}{\leftmargin=1cm
+                   \labelwidth=\leftmargin}\item[\Large\ding{43}]}
+  {\end{list}\end{mdframed}\par}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+    Conta il numero di coppie $(i, j)$ per cui $A[i] > A[j]$, dove A è l'array in input.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\InputFile
+Su standard input (\texttt{scanf}) sono presenti due righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: l'intero $N$, la dimensione dell'array da ordinare
+\item Riga $2$: gli $N$ interi $a_i$ da ordinare.
+\end{itemize}
+
+\OutputFile
+Su standard output (\texttt{printf}) deve essere scritta esattamente una riga,
+contenente $1$ numero, che rappresenta il numero di inversioni presenti nell'array.
+
+\begin{warning}
+  Questo numero potrebbe essere molto grande (più di $2^{31}$), quindi si consiglia
+    di usare un intero a $64$ bit per contenerlo (\texttt{long long}).
+\end{warning}
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \leq N \leq 200\,000$.
+    \item $-1\,000\,000 \leq a_i \leq 1\,000\,000$ per ogni $i$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Examples
+
+\begin{example}
+\exmpfile{sort.input0.txt}{sort.output0.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+%\Explanation

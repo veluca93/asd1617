@@ -11,3 +11,4 @@ tasks:
     - graph
     - diameter
     - dijkstra
+    - inversions
