@@ -1,7 +1,7 @@
 infile: ''
 memory_limit: 256
-name: sort
+name: inversions
 outfile: ''
 time_limit: 1.0
-title: Ordinamento
+title: Inversioni
 
