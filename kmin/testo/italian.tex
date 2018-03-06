@@ -1,0 +1,93 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+\usepackage{minted}
+
+\createsection{\Grader}{Grader di prova}
+
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+
+\newenvironment{warning}
+  {\par\begin{mdframed}[linewidth=2pt,linecolor=gray]%
+    \begin{list}{}{\leftmargin=1cm
+                   \labelwidth=\leftmargin}\item[\Large\ding{43}]}
+  {\end{list}\end{mdframed}\par}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Stampare l'intero che si troverebbe nella posizione $K$ dell'array $A$ fornito in
+input se $A$ fosse ordinato in ordine crescente.
+
+\begin{warning}
+L'input di questo problema è molto grande. Per non superare il tempo limite con
+la sola lettura dell'input, si consiglia di usare la seguente funzione al posto di
+\texttt{scanf} o \texttt{cout}:
+  \begin{verbatim}
+    int nextInt() {
+      int n = 0;
+      bool negative = false;
+      int c = getchar();
+      while ((c < '0' || c > '9') && c != '-')
+        c = getchar();
+      if (c == '-') {
+        negative = true;
+        c = getchar();
+      }
+      while (c >= '0' && c <= '9') {
+        n = 10 * n + c - '0';
+        c = getchar();
+      }
+      return negative ? -n : n;
+    }
+  \end{verbatim}
+\end{warning}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\InputFile
+Su standard input (\texttt{scanf}) sono presenti due righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: l'intero $N$, la dimensione dell'array da ordinare, e l'intero $K$, la posizione da stampare.
+\item Riga $2$: gli $N$ interi $a_i$ da ordinare.
+\end{itemize}
+
+\OutputFile
+Su standard output (\texttt{printf}) deve essere scritta esattamente una riga,
+contenente $1$ numero, ovvero l'elemento che si troverebbe in posizione $K$ se l'array fosse ordinato.
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Constraints
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+    \item $1 \leq N \leq 5\,000\,000$.
+    \item $-1\,000\,000 \leq a_i \leq 1\,000\,000$ per ogni $i$.
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\Examples
+
+\begin{example}
+\exmpfile{sort.input0.txt}{sort.output0.txt}%
+\end{example}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+%\Explanation

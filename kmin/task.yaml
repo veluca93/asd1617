@@ -1,0 +1,7 @@
+infile: ''
+memory_limit: 256
+name: kmin
+outfile: ''
+time_limit: 1.0
+title: k-esimo minimo
+
