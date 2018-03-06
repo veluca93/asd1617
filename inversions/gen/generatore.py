@@ -18,5 +18,4 @@ if len(sys.argv) >= 4:
     random.seed(sys.argv[3])
 
 print n
-for i in range(n):
-    print random.randint(-spread, spread),
+print " ".join(str(x) for x in random.sample(xrange(-spread, spread), n))
