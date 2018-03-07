@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int count;
+long long count;
 vector<int> a;
 vector<int> c;
 void merge(int low, int high, int mid);
